@@ -1,0 +1,14 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Docker image') {
+            steps {
+                script {
+                    def dockerImage = docker.build('my-docker-image:latest', '-f Dockerfile .')
+                }
+            }
+        }
+    }
+}
+
